@@ -26,7 +26,7 @@ def startWiFi():
 
     print("Connect wifi")
     #wifi.radio.connect(secrets['ssid'],secrets['password'])
-    wifi.radio.start_ap(secrets['ssid'],secrets['password'])
+    wifi.radio.start_ap(wificonfig['id'],wificonfig['password'])
 
     HOST = repr(wifi.radio.ipv4_address_ap)
     PORT = 80        # Port to listen on
