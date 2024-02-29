@@ -14,8 +14,7 @@ payload_html = """<!DOCTYPE html>
 <html>
     <head> <title>Chick-Pi</title> </head>
     <body> <h1>Chick-Pi</h1>
-        <table style = "font-size :18;
-        color:white;background-color:black; margin:auto;" border="5"> <tr><th>Data</th><th>Actions</th></tr> {} </table>
+        <table border="5"> <tr><th>Data</th><th>Actions</th></tr> {} </table>
         <br>
     </body>
 </html>
@@ -30,10 +29,9 @@ edit_html = """<!DOCTYPE html>
     <form action="/write/{}" method="POST">
       <textarea rows="5" cols="60" name="scriptData">{}</textarea>
       <br/>
-      <input type="submit" value="submit"/>
+            <input type="submit" value="submit"/>
     </form>
     <br>
-    <a href="/ducky">Home</a>
   </body>
 </html>
 """
@@ -44,6 +42,7 @@ new_html = """<!DOCTYPE html>
     <title>New Script</title>
   </head>
   <body>
+    <h1>Project by SnacksOps</h1>
     <form action="/new" method="POST">
       Script Name<br>
       <textarea rows="1" cols="60" name="scriptName"></textarea>
@@ -53,7 +52,6 @@ new_html = """<!DOCTYPE html>
       <input type="submit" value="submit"/>
     </form>
     <br>
-    <a href="/ducky">Home</a>
   </body>
 </html>
 """
