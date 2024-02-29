@@ -25,7 +25,7 @@ def startWiFi():
 
     HOST = repr(wifi.radio.ipv4_address_ap)
     PORT = 80       
-    print(HOST,PORT)
+
 
 
 supervisor.runtime.autoreload = False
