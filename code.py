@@ -43,15 +43,6 @@ led.switch_to_output()
 progStatus = False
 progStatus = getProgrammingStatus()
 
-if(progStatus == False):
-   
-    payload = selectPayload()
-
-    runScript(payload)
-
-    print("Done")
-else:
-    print(" ")
 
 led_state = False
 
