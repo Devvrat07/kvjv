@@ -1,4 +1,4 @@
 wifi = {
-  'id' : "TestAP"'
-  'password' : "pass1234"
+  'id' : "TestAP",
+  'password' : "passw1234"
 }
