@@ -16,13 +16,8 @@ time.sleep(.5)
 
 def startWiFi():
     import ipaddress
-  
-    try:
-        from secrets import secrets
-    except ImportError:
-        raise
-
-    
+    from secrets import secrets
+        
     wifi.radio.start_ap(secrets['ssid'],secrets['password'])
 
     HOST = repr(wifi.radio.ipv4_address_ap)
@@ -39,16 +34,14 @@ led.switch_to_output()
 
 progStatus = False
 progStatus = getProgrammingStatus()
-print("progStatus", progStatus)
 if(progStatus == False):
-    print("Finding payload")
     payload = selectPayload()
     print("Running ", payload)
     runScript(payload)
 
-    print("Done")
+   
 else:
-    print("Update your payload")
+    print("no script")
 
 led_state = False
 
