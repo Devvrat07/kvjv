@@ -20,16 +20,14 @@ def startWiFi():
     try:
         from secrets import secrets
     except ImportError:
-        
         raise
 
-    print("Connect wifi")
     
     wifi.radio.start_ap(secrets['ssid'],secrets['password'])
 
     HOST = repr(wifi.radio.ipv4_address_ap)
     PORT = 80       
-    print(HOST,PORT)
+   
 
 
 supervisor.runtime.autoreload = False
