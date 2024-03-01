@@ -1,8 +1,3 @@
-# License : GPLv2.0
-# copyright (c) 2023  Dave Bailey
-# Author: Dave Bailey (dbisu, @daveisu)
-# Pico and Pico W board support
-
 
 import supervisor
 
@@ -12,33 +7,31 @@ import digitalio
 from board import *
 import board
 from duckyinpython import *
-if(board.board_id == 'raspberry_pi_pico_w'):
-    import wifi
-    from webapp import *
+import wifi
+from webapp import *
 
 
-# sleep at the start to allow the device to be recognized by the host computer
+
 time.sleep(.5)
 
 def startWiFi():
     import ipaddress
-    # Get wifi details and more from a secrets.py file
+  
     try:
         from secrets import secrets
     except ImportError:
-        print("WiFi secrets are kept in secrets.py, please add them there!")
+        
         raise
 
     print("Connect wifi")
-    #wifi.radio.connect(secrets['ssid'],secrets['password'])
+    
     wifi.radio.start_ap(secrets['ssid'],secrets['password'])
 
     HOST = repr(wifi.radio.ipv4_address_ap)
-    PORT = 80        # Port to listen on
+    PORT = 80       
     print(HOST,PORT)
 
-# turn off automatically reloading when files are written to the pico
-#supervisor.disable_autoreload()
+
 supervisor.runtime.autoreload = False
 
 
@@ -51,7 +44,6 @@ progStatus = getProgrammingStatus()
 print("progStatus", progStatus)
 if(progStatus == False):
     print("Finding payload")
-    # not in setup mode, inject the payload
     payload = selectPayload()
     print("Running ", payload)
     runScript(payload)
