@@ -20,41 +20,9 @@ payload_html = """<!DOCTYPE html>
 </html>
 """
 
-edit_html = """<!DOCTYPE html>
-<html>
-  <head>
-    <title>Script Editor</title>
-  </head>
-  <body>
-    <form action="/write/{}" method="POST">
-      <textarea rows="5" cols="60" name="scriptData">{}</textarea>
-      <br/>
-            <input type="submit" value="submit"/>
-    </form>
-    <br>
-  </body>
-</html>
-"""
 
-new_html = """<!DOCTYPE html>
-<html>
-  <head>
-    <title>New Script</title>
-  </head>
-  <body>
-    <h1>Project by SnacksOps</h1>
-    <form action="/new" method="POST">
-      Script Name<br>
-      <textarea rows="1" cols="60" name="scriptName"></textarea>
-      Script<br>
-      <textarea rows="5" cols="60" name="scriptData"></textarea>
-      <br/>
-      <input type="submit" value="submit"/>
-    </form>
-    <br>
-  </body>
-</html>
-"""
+
+
 
 response_html = """<!DOCTYPE html>
 <html>
@@ -69,14 +37,7 @@ response_html = """<!DOCTYPE html>
 
 newrow_html = "<tr><td>{}</td><td><a href='/edit/{}'>Edit</a> / <a href='/run/{}'>Run</a></tr>"
 
-def setPayload(payload_number):
-    if(payload_number == 1):
-        payload = "payload.dd"
-
-    else:
-        payload = "payload"+str(payload_number)+".dd"
-
-    return(payload)
+payload = "payload.dd"
 
 
 def ducky_main(request):
