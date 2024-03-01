@@ -167,7 +167,7 @@ async def blink_pico_led(led):
     led_state = False
     while True:
         if led_state:
-            for i in range(100)
+            for i in range(100):
                 if i < 50:
                     led.duty_cycle = int(i * 2 * 65535 / 100)  # Up
                 await asyncio.sleep(0.01)
